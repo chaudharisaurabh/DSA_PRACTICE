@@ -16,3 +16,7 @@ Dynamic programming total questions and concepts formed.
 | 8.      | DP on trees                 | 4               |                                                 |
 | 9.      | DP on grid                  | 14              |                                                 |
 | 10.     | Others                      | 5               |                                                 |
+
+### Base videos on youtube to watch for quick revision
+
+to be updated

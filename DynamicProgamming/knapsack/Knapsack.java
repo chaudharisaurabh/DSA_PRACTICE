@@ -14,6 +14,7 @@ public class Knapsack {
         // Recursive code for knapsack
 
         System.out.println(knapsackRecursive(wt, val, W, n));
+        initializeDP(dp, W, n, "memo");
         System.out.println(knapsackMemoized(wt, val, W, n, dp));
         System.out.println(knapsackTabulation(wt, val, W, n, dp));
         
@@ -59,7 +60,7 @@ public class Knapsack {
     
     private int knapsackTabulation(int[] wt, int[] val, int W, int n, int[][] dp) {
 
-        initializeDP(dp, W, n);
+        initializeDP(dp, W, n, "tabulation");
         
         for (int i = 1; i < n + 1; i++) {
             for (int j = 1; j < W + 1; j++) {
@@ -78,11 +79,11 @@ public class Knapsack {
 
     }
     
-    private int[][] initializeDP(int[][] dp, int W, int n){
+    private int[][] initializeDP(int[][] dp, int W, int n, String mode){
         
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= W; j++) {
-                if (i == 0 || j == 0) {
+                if ((i == 0 || j == 0 ) && "memo".equals(mode)) {
                     dp[i][j] = 0;
                 } else {
                     dp[i][j] = -1;
